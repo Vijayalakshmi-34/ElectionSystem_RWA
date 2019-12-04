@@ -29,5 +29,19 @@ namespace ElectionSystem_RWA.Models
         {
             return new ApplicationDbContext();
         }
+        
+        public DbSet<Qualification> qualifications { get; set; }
+        public DbSet<Posting> postings { get; set; }
+       // public DbSet<CandidateRegistration> CandidateRegistrations { get; set; }
+        public DbSet<Unit> Units { get; set; }
+        public DbSet<Voter> Voters { get; set; }
+        public DbSet<President> Presidents { get; set; }
+        public DbSet<VicePresident> VicePresident { get; set; }
+        public DbSet<Secretary> Secretary { get; set; }
+        public DbSet<Treasurer> Treasurer { get; set; }
+        public DbSet<Members> Members { get; set; }
+
     }
+
+
 }

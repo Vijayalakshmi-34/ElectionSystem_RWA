@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ElectionSystem_RWA.Models.President>
+@{
+    ViewBag.Title = "Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Voting Result</h2>
+
+<br />
+<table class="table table-primary">
+    <thead>
+        <tr>
+            <th>Candidate Name</th>
+            <th>Vote Count</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CandidateName</td>
+                <td>@item.Vote</td>
+            </tr>
+        }
+    </tbody>
+    
+
+</table>
+@Html.ActionLink("To view the winner","Winner","Voters")
+

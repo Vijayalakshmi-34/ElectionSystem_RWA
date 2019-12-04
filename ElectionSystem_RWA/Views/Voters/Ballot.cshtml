@@ -1,0 +1,133 @@
+﻿@model ElectionSystem_RWA.ViewModels.PostingViewModel
+@{
+    ViewBag.Title = "Ballot";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("CountVote","Voters"))
+{
+    <h3>VOTE FOR PRESIDENT</h3>
+    <table class="table table-primary">
+        <tr>
+            <th>Candidate Name</th>
+            <th>Current Occupation</th>
+            <th>Previous RWA Member</th>
+            <th>Part Of Govt/Police/NGO</th>
+            <th>Criminal Record</th>
+            <th>Qualification</th>
+            <th>Vote</th>
+        </tr>
+
+        @foreach (var item in Model.President)
+        {
+            <tr>
+                <td>@item.CandidateName</td>
+                <td>@item.CurrentOccupation</td>
+                <td>@item.PreviousRWAMember</td>
+                <td>@item.PartOfGovtPoliceNGO</td>
+                <td>@item.CriminalRecord</td>
+                <td>@item.Qualification.QualificationType</td>
+                
+                <td>@Html.ActionLink("Vote","CountVote","Voters",new { id=item.Id},new { @class="btn btn-primary"})</td>
+            </tr>
+        }
+        
+    </table>
+    @*@Html.DropDownListFor(p=>p.President,ViewBag.Presidents as SelectList, null, htmlAttributes: new { @class = "form-control" })
+    <input type="submit"value="Vote"class="btn btn-primary" />*@
+}
+    @*<h3>VOTE FOR VICEPRESIDENT</h3>
+        <table  class="table table-primary">
+            <tr>
+                <th>Candidate Name</th>
+                <th>Current Occupation</th>
+                <th>Previous RWA Member</th>
+                <th>Part Of Govt/Police/NGO</th>
+                <th>Criminal Record</th>
+                <th>Qualification</th>
+                <th>Choose</th>
+            </tr>
+            <tr>
+                @foreach (var item in Model.VicePresident)
+                {
+                    <td>@item.CandidateName</td>
+                    <td>@item.CurrentOccupation</td>
+                    <td>@item.PreviousRWAMember</td>
+                    <td>@item.PartOfGovtPoliceNGO</td>
+                    <td>@item.CriminalRecord</td>
+                    <td>@item.Qualification.QualificationType</td>
+                    <td></td>
+                }
+            </tr>
+        </table>
+        <h3>VOTE FOR SECRETARY</h3>
+        <table class="table table-primary">
+            <tr>
+                <th>Candidate Name</th>
+                <th>Current Occupation</th>
+                <th>Previous RWA Member</th>
+                <th>Part Of Govt/Police/NGO</th>
+                <th>Criminal Record</th>
+                <th>Qualification</th>
+                <th>Choose</th>
+            </tr>
+            <tr>
+                @foreach (var item in Model.Secretary)
+                {
+                    <td>@item.CandidateName</td>
+                    <td>@item.CurrentOccupation</td>
+                    <td>@item.PreviousRWAMember</td>
+                    <td>@item.PartOfGovtPoliceNGO</td>
+                    <td>@item.CriminalRecord</td>
+                    <td>@item.Qualification.QualificationType</td>
+                    <td>Choose</td>
+                }
+            </tr>
+        </table>
+        <h3>TREASURER</h3>
+        <table class="table table-primary">
+            <tr>
+                <th>Candidate Name</th>
+                <th>Current Occupation</th>
+                <th>Previous RWA Member</th>
+                <th>Part Of Govt/Police/NGO</th>
+                <th>Criminal Record</th>
+                <th>Qualification</th>
+                <th>Choose</th>
+            </tr>
+            <tr>
+                @foreach (var item in Model.Treasurer)
+                {
+                    <td>@item.CandidateName</td>
+                    <td>@item.CurrentOccupation</td>
+                    <td>@item.PreviousRWAMember</td>
+                    <td>@item.PartOfGovtPoliceNGO</td>
+                    <td>@item.CriminalRecord</td>
+                    <td>@item.Qualification.QualificationType</td>
+                    <td></td>
+                }
+            </tr>
+        </table>
+        <h3>VOTE FOR MEMBERS</h3>
+        <table class="table table-primary">
+            <tr>
+                <th>Candidate Name</th>
+                <th>Current Occupation</th>
+                <th>Previous RWA Member</th>
+                <th>Part Of Govt/Police/NGO</th>
+                <th>Criminal Record</th>
+                <th>Qualification</th>
+                <th>Choose</th>
+            </tr>
+            <tr>
+                @foreach (var item in Model.Members)
+                {
+                    <td>@item.CandidateName</td>
+                    <td>@item.CurrentOccupation</td>
+                    <td>@item.PreviousRWAMember</td>
+                    <td>@item.PartOfGovtPoliceNGO</td>
+                    <td>@item.CriminalRecord</td>
+                    <td>@item.Qualification.QualificationType</td>
+                    <td></td>
+                }
+            </tr>
+        </table>*@
